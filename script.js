@@ -49,3 +49,48 @@ function printListItem(message) {
 	p.innerHTML = message
 	document.getElementById("container").appendChild(p)
 }
+
+function getUsersWeather() {
+	document.getElementById("container").innerHTML = ""
+	console.log("clicked on user weather button")
+	let h4 = document.createElement("h4")
+	h4.innerHTML = "Weather report near you:"
+	document.getElementById("container").appendChild(h4)
+
+	navigator.geolocation.getCurrentPosition(geolocSuccess, geolocError)
+}
+
+function geolocSuccess(position) {
+	const newPos = {lat: position.coords.latitude, lng: position.coords.longitude}
+	console.log(newPos)
+	getLocation(newPos)
+}
+
+function geolocError() {
+	console.log("Error getting user's location.")
+}
+
+function getLocation(locObj) {
+	let mapUri = `https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?lat=${locObj.lat}&lon=${locObj.lng}&units=imperial&APPID=5d0bfe5cb3340bdfed8acebf9b45ddfe`
+	console.log(mapUri)
+	let request = new XMLHttpRequest()
+	request.open("GET", mapUri, true)
+	request.onload = onLoadFunc
+	request.onerror = onerrorFunc
+	request.send()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
