@@ -58,13 +58,16 @@ function printListItem(message) {
 	document.getElementById("container").appendChild(p)
 }
 
+// To get weather icon ID and use it to display weather icon from URL"
 function displayIcon(data) {
+	document.getElementById("iconContainer").innerHTML = ""
 	let div = document.createElement("div")
 	div.innerHTML = ""
 	let iconID = data.weather[0].icon
 	console.log(iconID)
-	let iconURL = 'http://openweathermap.org/img/w/${iconID}.png'
-	div.innerHTML = '<img src="${iconURL}">'
+	let iconURL = `http://openweathermap.org/img/w/${iconID}.png`
+	div.innerHTML = `<img src="${iconURL}">`
+	// div.innerHTML = '"<img src="http://openweathermap.org/img/w/02n.png">'
 	console.log(div)
 	document.getElementById("iconContainer").appendChild(div)
 }
