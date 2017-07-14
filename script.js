@@ -44,6 +44,8 @@ function onLoadFunc() {
 	printListItem("Current Temperature: " + resp.main.temp + " °F")
 	printListItem("Max Temperature Today: " + resp.main.temp_max + " °F")
 	printListItem("Min Temperature Today: " + resp.main.temp_min + " °F")
+	displayIcon(resp)
+
 }
 
 function onerrorFunc() {
@@ -56,18 +58,31 @@ function printListItem(message) {
 	document.getElementById("container").appendChild(p)
 }
 
+function displayIcon(data) {
+	let div = document.createElement("div")
+	div.innerHTML = ""
+	let iconID = data.weather[0].icon
+	console.log(iconID)
+	let iconURL = 'http://openweathermap.org/img/w/02n.png'
+	div.innerHTML = '<img src="${iconURL}">'
+	console.log(div)
+	document.getElementById("iconContainer").appendChild(div)
+
+}
+
 // To get weather report for user's location
 function getUsersWeather() {
 	getWeather(userMessage)
 	navigator.geolocation.getCurrentPosition(geolocSuccess, geolocError)
 }
 
+// Finds users location, feeds to get weather function
 function getLocation(locObj) {
 	let mapUri = `https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?lat=${locObj.lat}&lon=${locObj.lng}&units=imperial&APPID=5d0bfe5cb3340bdfed8acebf9b45ddfe`
 	console.log(mapUri)
 	callApi(mapUri)
 }
-
+ // Converts results from navigator.geolocation call to usable object
 function geolocSuccess(position) {
 	const newPos = {lat: position.coords.latitude, lng: position.coords.longitude}
 	console.log(newPos)
