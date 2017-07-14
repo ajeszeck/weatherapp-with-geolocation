@@ -63,11 +63,10 @@ function displayIcon(data) {
 	div.innerHTML = ""
 	let iconID = data.weather[0].icon
 	console.log(iconID)
-	let iconURL = 'http://openweathermap.org/img/w/02n.png'
+	let iconURL = 'http://openweathermap.org/img/w/${iconID}.png'
 	div.innerHTML = '<img src="${iconURL}">'
 	console.log(div)
 	document.getElementById("iconContainer").appendChild(div)
-
 }
 
 // To get weather report for user's location
