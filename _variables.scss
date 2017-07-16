@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab');
+
+$background: #CDE3F4;
+$secondary-color: #97C5E0;
+$font: 'Zilla Slab', serif;
+$gold: #DBC56F;
+$dark-green: #496760;
+$light-green: #C5D7C5;
+$grey-blue: #E1E9F5;
+
+
+$button-colors: (
+	seattle: (#79947B, #B8CFB5, #B8CFB5), //current, hover, active
+	london: (#79947B, #B8CFB5, #B8CFB5), 
+	local: (#4A2867, #7376B6, #7376B6)
+)
+
+//$time-style-map: (
+//	day: (#CDE3F4, #97C5E0), light-blue, darker-blue
+//	night: (#4C8BB2, #291A34) /*dark-blue, purple */ 
+//)

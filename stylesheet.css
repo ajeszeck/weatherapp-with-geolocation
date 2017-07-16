@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Zilla+Slab");
+html {
+  font-family: "Zilla Slab", serif;
+  background-color: #CDE3F4; }
+
+header {
+  background-color: #97C5E0;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+button {
+  font-family: "Zilla Slab", serif; }
+
+/*#loader {
+	position: absolute;
+	margin: auto;
+	border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+	border-top: 16px solid $gold;
+	border-right: 16px solid $grey-blue;
+	border-bottom: 16px solid $dark-green;
+	border-left: 16px solid $light-green;
+}*/
+#main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+#weather-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+button {
+  padding: 0.5rem; }
+
+i {
+  padding-right: 0.5rem; }
+
+.seattle {
+  background-color: #79947B;
+  color: white; }
+  .seattle:hover, .seattle:focus {
+    background-color: #B8CFB5; }
+  .seattle:active {
+    background-color: #B8CFB5; }
+
+.london {
+  background-color: #79947B;
+  color: white; }
+  .london:hover, .london:focus {
+    background-color: #B8CFB5; }
+  .london:active {
+    background-color: #B8CFB5; }
+
+.local {
+  background-color: #4A2867;
+  color: white; }
+  .local:hover, .local:focus {
+    background-color: #7376B6; }
+  .local:active {
+    background-color: #7376B6; }
+
+/*# sourceMappingURL=stylesheet.css.map */
