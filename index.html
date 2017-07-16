@@ -3,14 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="https://use.fontawesome.com/e456ab459c.js"></script>
   </head>
   <body>
-      <button type="button" name="button" onclick="getSeattleWeather()">Seattle</button>
-      <button type="button" name="button" onclick="getLondonWeather()">London</button>
-      <button type="button" name="button" onclick="getUsersWeather()">Current Weather Near You</button>
-      <div id="container"></div>
-      <div id="iconContainer">
+    <header>
+      <h1>Weather Checker</h1>
+      <div>
+        <button type="button" name="button" class="button seattle" onclick="getSeattleWeather()">Seattle</button>
+        <button type="button" name="button" class="button london" onclick="getLondonWeather()">London</button>
+        <button type="button" name="button" class="button local" onclick="getUsersWeather()"><i class="fa fa-location-arrow" aria-hidden="true"></i>Current Weather Near You</button>
       </div>
-      <script type="text/javascript" src="script.js"></script>
+    </header>
+    <div id="main">
+      <div id="loader"></div>
+      <div id="weather-content">
+        <div id="iconContainer"></div>
+        <div id="container"></div>
+      </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
