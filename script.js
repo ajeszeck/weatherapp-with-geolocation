@@ -5,13 +5,23 @@ const london = "London"
 const userMessage = "your area"
 
 window.onload = function() {
-	console.log("linked")
+
+}
+
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
 }
 
 function getWeather(city) {
 	console.log(city)
 	document.getElementById("container").innerHTML = ""
-	console.log("clicked on " + city)
 	let h4 = document.createElement("h4")
 	h4.innerHTML = "Today in " + city + ":"
 	document.getElementById("container").appendChild(h4)
@@ -45,6 +55,11 @@ function onLoadFunc() {
 	printListItem("Max Temperature Today: " + resp.main.temp_max + " °F")
 	printListItem("Min Temperature Today: " + resp.main.temp_min + " °F")
 	displayIcon(resp)
+	let currentRawTime = resp.dt * 1000
+	let currentTime = new Date(currentRawTime)
+	console.log(currentTime)
+	printListItem("Time of Most Recent Forecast: " + currentTime)
+	// printListItem("Local Time: " + resp.dt )
 
 }
 
@@ -64,11 +79,8 @@ function displayIcon(data) {
 	let div = document.createElement("div")
 	div.innerHTML = ""
 	let iconID = data.weather[0].icon
-	console.log(iconID)
 	let iconURL = `http://openweathermap.org/img/w/${iconID}.png`
 	div.innerHTML = `<img src="${iconURL}">`
-	// div.innerHTML = '"<img src="http://openweathermap.org/img/w/02n.png">'
-	console.log(div)
 	document.getElementById("iconContainer").appendChild(div)
 }
 
@@ -95,5 +107,7 @@ function geolocError() {
 	console.log("Error getting user's location.")
 }
 
+// $("#sunrise").text(new Date(objWeather.sys.sunrise * 1000).toLocaleTimeString());
+// $("#sunset").text(new Date(objWeather.sys.sunset * 1000).toLocaleTimeString()); 
 
 
